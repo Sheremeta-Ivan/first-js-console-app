@@ -20,15 +20,18 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
   for (let i = 0; i < 2; i += 1) {
-    const a = prompt("What the latest film do you watch?"),
+    const a = prompt("What the latest film do you watch?").trim(),
       b = prompt("How would you rate it?");
     if (a != null && b != null && a != "" && b != "" && a.length < 50) {
       personalMovieDB.movies[a] = b;
+      console.log("done");
     } else {
+      console.log("error");
       i -= 1;
     }
   }
 }
+
 
 rememberMyFilms();
 
@@ -57,7 +60,7 @@ showMyDB(personalMovieDB.privat);
 function writeYourGenres() {
   for (let i = 1; i <= 3; i += 1) {
     const genre = prompt(`Your favourite genre by number ${i}`);
-    personalMovieDB.genres[i-1] = genre;
+    personalMovieDB.genres[i - 1] = genre;
   }
 }
 
